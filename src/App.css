@@ -1,38 +1,141 @@
 .App {
-  text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  /* align-items:first baseline; */
+  padding: 20px;
+  padding-top: 0;
+}
+
+.display-toggle-container {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  padding: 10px; 
+  background-color: white;
+  position: relative; 
+  /* background-color: red; */
+}
+
+.display-button {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  /* padding-bottom: 6px; */
+  margin-right: 20px; 
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.dropdown {
+  position: absolute;
+  top: 45px; 
+  left: 0;
+  /* right: 1; */
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  padding-bottom: 0;
+  width: 200px; 
+  /* width: 1.5rem; */
+  z-index: 1000;
+}
+
+.dropdown-item {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between; 
+  margin-bottom: 15px; 
 }
 
-.App-link {
-  color: #61dafb;
+.dropdown label {
+  color: #999; 
+  font-size: 0.9rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dropdown select {
+  width: 100%; 
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.dropdown select option {
+  white-space: nowrap;
+}
+
+.status-icon-wrapper {
+  margin-right: 8px; 
+  display: inline-flex; 
+  align-items: center; 
+}
+
+.task-count {
+  margin-left: 4px; 
+  font-size: 0.9em; 
+  color: gray; 
+}
+
+
+.columns {
+  display: flex;
+  /* gap: 20px; */
+  width: 100%;
+  height:auto;
+  justify-content: space-around;
+  background-color: #fcfcfc;
+}
+
+.column {
+  width: 250px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.ticket-title {
+  display: -webkit-box;         
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: 2;      
+  overflow: hidden;             
+  text-overflow: ellipsis;     
+  white-space: normal;          
+  max-width: 100%;              
+  margin: 0;                  
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.card-p {
+  color: #999;
+  font-size: 0.8em;
 }
